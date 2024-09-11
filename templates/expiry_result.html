@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Extraction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Text Extraction Result</h1>
+    </header>
+    <section>
+        <div class="box container">
+            <h2>Extracted Text</h2>
+            {% for product in products %}
+                <div class="product-result">
+                    <img src="{{ url_for('static', filename='uploads/' ~ product['image']) }}" alt="Uploaded Image" style="max-width: 100%;">
+                    <p>Extracted Text: {{ product['extracted_text'] }}</p>
+                </div>
+            {% endfor %}
+            <a href="{{ url_for('index') }}">Back to Home</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Flipkart. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
