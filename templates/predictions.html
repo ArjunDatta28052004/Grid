@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Predictions</h1>
+        {% for detail in product_details %}
+            <div class="card mb-3">
+                <img src="{{ url_for('static', filename='uploads/' + detail['image']) }}" class="card-img-top" alt="{{ detail['image'] }}">
+                <div class="card-body">
+                    <h5 class="card-title">Image: {{ detail['image'] }}</h5>
+                    {% if detail['mfg_date'] %}
+                        <p class="card-text">Manufacturing Date: {{ detail['mfg_date'] }}</p>
+                    {% endif %}
+                    {% if detail['exp_date'] %}
+                        <p class="card-text">Expiry Date: {{ detail['exp_date'] }}</p>
+                    {% endif %}
+                    {% if detail['priority'] %}
+                        <p class="card-text">Priority: {{ detail['priority'] }}</p>
+                    {% endif %}
+                    {% if detail['prediction'] %}
+                        <p class="card-text">Freshness Prediction: {{ detail['prediction'] }}</p>
+                    {% endif %}
+                    {% if detail['MRP'] %}
+                        <p class="card-text">MRP: {{ detail['MRP'] }}</p>
+                    {% endif %}
+                    {% if detail['Brand'] %}
+                        <p class="card-text">Brand: {{ detail['Brand'] }}</p>
+                    {% endif %}
+                    {% if detail['Dimensions'] %}
+                        <p class="card-text">Dimensions: {{ detail['Dimensions'] }}</p>
+                    {% endif %}
+                    {% if detail['Product Type'] %}
+                        <p class="card-text">Product Type: {{ detail['Product Type'] }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        <a href="{{ url_for('upload_page') }}" class="btn btn-secondary">Back to Upload</a>
+    </div>
+</body>
+</html>

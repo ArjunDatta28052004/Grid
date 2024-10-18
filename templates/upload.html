@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #video {
+            width: 100%;
+            border: 2px solid black;
+        }
+        #canvas {
+            display: none; /* Hide canvas initially */
+        }
+        .capture-btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Upload Images</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="predict_type">Select Prediction Type:</label>
+                <select id="predict_type" name="predict_type" class="form-control">
+                    <option value="expiry">Expiry Date</option>
+                    <option value="freshness">Freshness Prediction</option>
+                    <option value="brand_detection">Brand Detection</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="files">Upload Images:</label>
+                <input type="file" class="form-control" id="files" name="files[]" multiple>
+                <p>Or capture an image using your camera:</p>
+                <video id="video" autoplay></video>
+                <button type="button" class="btn btn-secondary capture-btn" id="capture">Capture</button>
+                <canvas id="canvas"></canvas>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+    </div>
+
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const captureButton = document.getElementById('capture');
+
+        // Access the user's camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                video.srcObject = stream;
+            })
+            .catch((error) => {
+                console.error("Error accessing camera: ", error);
+            });
+
+        // Capture the image from the video
+        captureButton.addEventListener('click', () => {
+            const context = canvas.getContext('2d');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Convert the captured image to a Blob and append it to the file input
+            canvas.toBlob((blob) => {
+                const file = new File([blob], 'captured-image.png', { type: 'image/png' });
+                const dataTransfer = new DataTransfer();
+                
+                // Add the captured image to the DataTransfer
+                dataTransfer.items.add(file);
+                
+                // Set the file input's files to the new FileList
+                const fileInput = document.getElementById('files');
+                fileInput.files = dataTransfer.files;
+                alert('Image captured and ready to upload!');
+            }, 'image/png');
+        });
+    </script>
+</body>
+</html>
