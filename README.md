@@ -150,7 +150,7 @@ Here are three aim lines for your project:
 
 
 
-## Code Explanation
+## File Information
 
 
 
@@ -191,20 +191,20 @@ A [demonstration](https://drive.google.com/file/d/1e5DXsXHaJHBx6NetCKQZEuYE8uKNw
 
 
 
-The required [presentation](https://drive.google.com/file/d/13_X8sXRJevog18nj_edrX5-BJ853lpur/view?usp=sharing) was made in conjunction with the product developed.  to be EDITED
+The required [presentation](https://docs.google.com/presentation/d/1WHwDBqX0rtT0Q6j9Q-c61Pa2aSqh5CNY/edit?usp=drive_link&ouid=114890664674956410821&rtpof=true&sd=true) was made in conjunction with the product developed.  to be EDITED
 
 
 
 ## Members
 
+Connect To us on LinkedIn
 
+- Arjun Datta. [@Arjun Datta](https://www.linkedin.com/in/arjun-datta-972533251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
-- Arjun Datta. [@Arjun Datta]()
+- Ritam Datta [@Ritam Datta](https://in.linkedin.com/in/ritam-datta-65317926b)
 
-- Ritam Datta [@Ritam Datta]()
+- Kaushiki Mondal [@Kaushiki Mandal](https://www.linkedin.com/in/kaushiki-mandal-832793267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
-- Kaushiki Mondal [@Kaushiki Mandal]()
+- Chandrasish Bhattacharya. [@Chandrasish Bhattacharya](https://www.linkedin.com/in/chandrasish-bhattacharya/) 
 
-- Chandrasish Bhattacharya. [@Chandrasish Bhattacharya]() 
-
-- Rahul Mandal. [@Rahul Mandal]()
+- Rahul Mandal. [@Rahul Mandal](https://www.linkedin.com/in/rahul-mondal-869162334)
